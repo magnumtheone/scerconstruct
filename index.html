@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scer-l Construct Sarl - Construction & Forage en RDC</title>
+    <meta name="description" content="Scer-l Construct Sarl, entreprise spécialisée dans les travaux de construction et de forage en RDC. Bâtiments, routes, ouvrages hydrauliques et plus.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome pour les icônes de médias sociaux et PDF -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Défilement fluide pour toute la page */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Variables CSS pour les thèmes clair et sombre */
+        :root {
+            /* Couleurs du thème clair */
+            --color-bg-primary-light: #f9fafb; /* bg-gray-50 */
+            --color-bg-secondary-light: #ffffff; /* bg-white */
+            --color-bg-tertiary-light: #e5e7eb; /* bg-gray-200 */
+            --color-text-primary-light: #374151; /* text-gray-700 */
+            --color-text-secondary-light: #1f2937; /* text-gray-800 */
+            --color-text-light-subtle: #6b7280; /* text-gray-500 */
+            --color-accent-text-light: #000000; /* black */
+            --color-link-light: #4b5563; /* text-gray-600 */
+            --color-link-hover-light: #111827; /* hover:text-gray-900 */
+
+            /* Couleurs du thème sombre */
+            --color-bg-primary-dark: #1a1a1a; /* Gris très foncé */
+            --color-bg-secondary-dark: #2c2c2c; /* Gris foncé */
+            --color-bg-tertiary-dark: #3a3a3a; /* Gris moyen foncé */
+            --color-text-primary-dark: #e0e0e0; /* Gris clair */
+            --color-text-secondary-dark: #f0f0f0; /* Gris plus clair */
+            --color-text-dark-subtle: #a0a0a0; /* Gris moyen */
+            --color-accent-text-dark: #ffffff; /* blanc pur */
+            --color-link-dark: #a0a0a0; /* Gris clair pour les liens */
+            --color-link-hover-dark: #ffffff; /* Blanc pour les liens au survol */
+        }
+
+        /* Styles de base du corps, transforment les couleurs avec les variables */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--color-bg-primary-light);
+            color: var(--color-text-primary-light);
+            transition: background-color 0.3s ease, color 0.3s ease; /* Transition pour les couleurs de fond/texte */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Application des couleurs du thème sombre */
+        html[data-theme='dark'] body {
+            background-color: var(--color-bg-primary-dark);
+            color: var(--color-text-primary-dark);
+        }
+
+        /* Surcharge des classes Tailwind avec les variables CSS pour le mode sombre */
+        .bg-gray-50 { background-color: var(--color-bg-primary-light); }
+        html[data-theme='dark'] .bg-gray-50 { background-color: var(--color-bg-primary-dark); }
+
+        .bg-white { background-color: var(--color-bg-secondary-light); }
+        html[data-theme='dark'] .bg-white { background-color: var(--color-bg-secondary-dark); }
+
+        .bg-gray-100 { background-color: var(--color-bg-secondary-light); } /* Similaire au blanc en mode clair */
+        html[data-theme='dark'] .bg-gray-100 { background-color: var(--color-bg-tertiary-dark); } /* Nuance plus claire en mode sombre */
+
+        .bg-gray-200 { background-color: var(--color-bg-tertiary-light); }
+        html[data-theme='dark'] .bg-gray-200 { background-color: var(--color-bg-tertiary-dark); }
+
+        /* Pied de page et hover des boutons noirs */
+        .bg-gray-800 { background-color: #1f2937; } /* Valeur Tailwind par défaut pour gray-800 */
+        html[data-theme='dark'] .bg-gray-800 { background-color: #2c2c2c; } /* Gris plus foncé pour le pied de page en mode sombre */
+
+        .text-gray-700 { color: var(--color-text-primary-light); }
+        html[data-theme='dark'] .text-gray-700 { color: var(--color-text-primary-dark); }
+
+        .text-gray-800 { color: var(--color-text-secondary-light); }
+        html[data-theme='dark'] .text-gray-800 { color: var(--color-text-secondary-dark); }
+
+        .text-gray-500 { color: var(--color-text-light-subtle); }
+        html[data-theme='dark'] .text-gray-500 { color: var(--color-text-dark-subtle); }
+
+        .text-black { color: var(--color-accent-text-light); }
+        html[data-theme='dark'] .text-black { color: var(--color-accent-text-dark); }
+
+        /* Liens de navigation */
+        .text-gray-600 { color: var(--color-link-light); }
+        html[data-theme='dark'] .text-gray-600 { color: var(--color-link-dark); }
+
+        .hover\:text-gray-900:hover { color: var(--color-link-hover-light); }
+        html[data-theme='dark'] .hover\:text-gray-900:hover { color: var(--color-link-hover-dark); }
+
+        /* Les éléments explicitement noirs/blancs (boutons, bordures) restent tels quels */
+        .bg-black { background-color: black; }
+        .text-white { color: white; }
+        .border-black { border-color: black; }
+
+        /* Ajustement du hover pour les boutons noirs pour qu'ils s'intègrent bien */
+        .bg-black:hover { background-color: #333; } /* Lègèrement plus clair au survol */
+        html[data-theme='dark'] .bg-black:hover { background-color: #000; } /* Revert to pure black or slightly darker on hover in dark mode */
+
+
+        /* Styles du carrousel et de la modale */
+        .hero-bg {
+            background-image: none;
+            background-color: #333;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        #mobile-menu.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 100;
+            animation: slideIn 0.3s forwards;
+        }
+
+        #mobile-menu.active a {
+            color: white;
+            font-size: 1.5rem;
+            padding: 1rem 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+
+        @keyframes slideOut {
+            from { transform: translateX(0); }
+            to { transform: translateX(100%); }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 200;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .modal-video-content {
+            max-width: 90%;
+            max-height: 90%;
+            width: auto;
+            height: auto;
+        }
+
+        .modal-nav-button {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .modal-prev { left: 0; }
+        .modal-next { right: 0; }
+        .modal-nav-button:hover { background-color: rgba(0,0,0,0.8); }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .modal-close:hover,
+        .modal-close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .hero-carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #333;
+        }
+
+        .hero-carousel-slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            object-fit: cover;
+        }
+
+        .hero-carousel-slide.active { opacity: 1; }
+
+        .hero-carousel-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            text-align: center;
+            width: 100%;
+            padding: 0 1rem;
+        }
+
+        .hero-carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            transition: 0.6s ease;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+
+        .hero-carousel-nav-prev {
+            left: 0;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        .hero-carousel-nav-next {
+            right: 0;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+
+        .hero-carousel-nav:hover { background-color: rgba(0, 0, 0, 0.8); }
+
+        .hero-carousel-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .hero-carousel-dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .hero-carousel-dot.active,
+        .hero-carousel-dot:hover { background-color: #717171; }
+
+        /* --- Custom Animations for Sections --- */
+        /* Keyframes */
+        @keyframes slideUpFade {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInRightFade {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInLeftFade {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes zoomInFade {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes popInFade {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes slideDownFade {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Base class for elements to be animated by IntersectionObserver */
+        .animated-element {
+            opacity: 0; /* Initial state: hidden */
+        }
+
+        /* Specific animation triggers */
+        .animated-element.animate-slideUpFade { animation: slideUpFade 0.8s ease-out forwards; }
+        .animated-element.animate-slideInRightFade { animation: slideInRightFade 0.8s ease-out forwards; }
+        .animated-element.animate-slideInLeftFade { animation: slideInLeftFade 0.8s ease-out forwards; }
+        .animated-element.animate-zoomInFade { animation: zoomInFade 0.8s ease-out forwards; }
+        .animated-element.animate-fadeInScale { animation: fadeInScale 0.8s ease-out forwards; }
+        .animated-element.animate-popInFade { animation: popInFade 0.8s ease-out forwards; }
+        .animated-element.animate-slideDownFade { animation: slideDownFade 0.8s ease-out forwards; }
+
+        /* Staggering for grid items */
+        .staggered-item:nth-child(1) { animation-delay: 0.1s; }
+        .staggered-item:nth-child(2) { animation-delay: 0.2s; }
+        .staggered-item:nth-child(3) { animation-delay: 0.3s; }
+        .staggered-item:nth-child(4) { animation-delay: 0.4s; }
+        .staggered-item:nth-child(5) { animation-delay: 0.5s; }
+        .staggered-item:nth-child(6) { animation-delay: 0.6s; }
+        .staggered-item:nth-child(7) { animation-delay: 0.7s; }
+        .staggered-item:nth-child(8) { animation-delay: 0.8s; }
+        /* Add more if you expect more than 8 items in a grid */
+
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-700">
+    <!-- Header / Navbar -->
+    <header id="header" class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo avec image -->
+            <a href="#" class="flex items-center">
+                <!-- Remplacez cette URL par l'URL de votre logo réel -->
+                <img src="logo.jpg" alt="logo Scer-L Construct" class="h-12 mr-2" loading="lazy">
+            </a>
+            <!-- Menu principal à gauche pour les grands écrans -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-600 hover:text-gray-900 transition">À propos</a>
+                <a href="#services" class="text-gray-600 hover:text-gray-900 transition">Nos Activités</a>
+                <a href="#commitments" class="text-gray-600 hover:text-gray-900 transition">Engagements</a>
+                <a href="#management" class="text-gray-600 hover:text-gray-900 transition">Management</a>
+                <a href="#actualites" class="text-gray-600 hover:text-gray-900 transition">Actualités</a>
+                <a href="#appel-offres" class="text-gray-600 hover:text-gray-900 transition">Appel d'offres</a>
+                <a href="#gallery" class="text-gray-600 hover:text-gray-900 transition">Galerie Photos</a>
+                <a href="#video-gallery" class="text-gray-600 hover:text-gray-900 transition">Galerie Vidéos</a>
+                <a href="#contact" class="text-gray-600 hover:text-gray-900 transition">Contact</a>
+            </div>
+
+            <!-- Bouton du mode sombre et menu mobile -->
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="p-2 bg-gray-200 text-gray-800 rounded-full transition-colors duration-300
+                                               dark:bg-gray-700 dark:text-white">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:inline-block"></i>
+                </button>
+                <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none p-2 bg-black text-white border border-black">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu (Initialement caché) -->
+        <div id="mobile-menu" class="hidden">
+            <!-- Les liens du menu mobile seront gérés par JS pour l'ouverture pleine page -->
+        </div>
+    </header>
+    <!-- Hero Section with Carousel -->
+    <section class="hero-bg text-white relative">
+        <div class="hero-carousel-container">
+            <!-- Images du carrousel -->
+            <!-- Remplacez cette URL par l'URL de votre image réelle 1 -->
+            <img src="terrasse.jpg" alt="[attachment_1](attachment)" class="hero-carousel-slide active">
+            <!-- Remplacez cette URL par l'URL de votre image réelle 2 -->
+            <img src="AIEASE_Gb1.jpeg" alt="[attachment_2](attachment)" class="hero-carousel-slide">
+            <!-- Remplacez cette URL par l'URL de votre image réelle 3 -->
+            <img src="bg3.jpg" alt="[attachment_3](attachment)" class="hero-carousel-slide">
+            <!-- Remplacez cette URL par l'URL de votre image réelle 4 -->
+            <img src="bg4.jpg" alt="[attachment_4](attachment)" class="hero-carousel-slide">
+            <!-- Remplacez cette URL par l'URL de votre image réelle 5 -->
+            <img src="ouvrier2.jpeg" alt="[attachment_5](attachment)" class="hero-carousel-slide">
+
+            <!-- Texte et bouton du héros -->
+            <div class="hero-carousel-text">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Bâtir l'avenir, Forer le progrès</h1>
+                <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">Votre partenaire de confiance pour tous vos projets de construction et de forage en République Démocratique du Congo.</p>
+                <a href="#contact" class="bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 border border-black transition-transform transform hover:scale-105">
+                    Demandez un devis
+                </a>
+            </div>
+
+            <!-- Boutons de navigation du carrousel -->
+            <a class="hero-carousel-nav hero-carousel-nav-prev" onclick="plusSlides(-1)">❮</a>
+            <a class="hero-carousel-nav hero-carousel-nav-next" onclick="plusSlides(1)">❯</a>
+
+            <!-- Indicateurs (points) du carrousel -->
+            <div class="hero-carousel-dots">
+                <span class="hero-carousel-dot" onclick="currentSlide(1)"></span>
+                <span class="hero-carousel-dot" onclick="currentSlide(2)"></span>
+                <span class="hero-carousel-dot" onclick="currentSlide(3)"></span>
+                <span class="hero-carousel-dot" onclick="currentSlide(4)"></span>
+                <span class="hero-carousel-dot" onclick="currentSlide(5)"></span>
+            </div>
+        </div>
+    </section>
+    <main>
+        <!-- About Us Section -->
+        <section id="about" class="py-20 bg-gray-50 text-gray-700">
+            <div class="container mx-auto px-6 animated-element" data-animation-type="slideUpFade">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800">À propos de nous</h2>
+                    <p class="text-gray-500 mt-2">Votre expert en BTP et infrastructures hydrauliques.</p>
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-12 mb-16">
+                    <div class="md:w-1/2">
+                        <!-- Remplacez cette URL par l'URL de votre image d'équipe réelle -->
+                        <img src="Emploi.png" alt="[attachment_6](attachment)" class="rounded-lg shadow-lg" loading="lazy">
+                    </div>
+                    <div class="md:w-1/2">
+                        <p class="mb-4">
+                            Scer-l Construct Sarl est une entreprise spécialisée dans les travaux de construction et de forage, basée à Kisangani. Depuis sa création, elle s’est imposée comme un acteur fiable dans le domaine du bâtiment et des infrastructures hydrauliques. Notre expertise repose sur une équipe pluridisciplinaire, des équipements modernes et un engagement fort pour la qualité et la durabilité.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Vision, Mission et Défis -->
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800">Vision, mission et défis</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-lg">
+                    <div class="animated-element staggered-item" data-animation-type="slideUpFade">
+                        <h3 class="font-bold text-xl text-gray-800 mb-2">Vision</h3>
+                        <p>Faire du Scer-L Construct la première agence de développement en RDC valorisant les compétences congolaises pour un développement national.</p>
+                    </div>
+                    <div class="animated-element staggered-item" data-animation-type="slideUpFade">
+                        <h3 class="font-bold text-xl text-gray-800 mb-2">Mission</h3>
+                        <p>Accompagner le Gouvernement Congolais dans la réduction de la pauvreté et des inégalités sociales.</p>
+                    </div>
+                    <div class="animated-element staggered-item" data-animation-type="slideUpFade">
+                        <h3 class="font-bold text-xl text-gray-800 mb-2">Nos défis</h3>
+                        <p>Exécuter des projets de qualité dans les délais et le respect des normes dans différents environnements.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-12 animated-element" data-animation-type="zoomInFade">
+                    <a href="#" class="bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 border border-black">
+                        Nos valeurs
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section (Nos Domaines d’Activité) -->
+        <section id="services" class="py-20 bg-white text-gray-700">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 animated-element" data-animation-type="slideUpFade">
+                    <h2 class="text-3xl font-bold text-gray-800">Nos Domaines d’Activité</h2>
+                    <p class="text-gray-500 mt-2">Des solutions complètes pour des projets ambitieux.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Travaux de Construction -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow animated-element staggered-item" data-animation-type="slideInRightFade">
+                        <!-- Remplacez cette URL par l'URL de votre image réelle pour les Travaux de Construction -->
+                        <img src="école.jpg" alt="[attachment_7](attachment)" class="w-full h-48 object-cover" loading="lazy">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Travaux de Construction</h3>
+                            <ul class="space-y-2 text-gray-700 text-sm">
+                                <li class="flex items-start"><span class="bg-black rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></span>Bâtiments administratifs, logements, écoles et centres de santé</li>
+                                <li class="flex items-start"><span class="bg-black rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></span>Ouvrages en béton armé</li>
+                                <li class="flex items-start"><span class="bg-black rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></span>Réhabilitation et rénovation de bâtiments</li>
+                                <li class="flex items-start"><span class="bg-black rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></span>Construction de routes, ponts et ouvrages de drainage</li>
+                                <li class="flex items-start"><span class="bg-black rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></span>Études techniques, architecture et ingénierie du bâtiment</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Forage et Infrastructures Hydrauliques -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow animated-element staggered-item" data-animation-type="slideInRightFade">
+                        <!-- Remplacez cette URL par l'URL de votre image réelle pour le Forage et Hydraulique -->
+                        <img src="forage1.jpg" alt="[attachment_8](attachment)" class="w-full h-48 object-cover" loading="lazy">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Forage et Infrastructures Hydrauliques</h3>
+                            <ul class="space-y-2 text-gray-700 text-sm">
+                                <li class="flex items-start"><span class="bg-black rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></span>Forage de puits d’eau (manuel et mécanique)</li>
+                                <li class="flex items-start"><span class="bg-black rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></span>Installation de pompes manuelles et solaires</li>
+                                <li class="flex items-start"><span class="bg-black rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></span>Construction de châteaux d’eau</li>
+                                <li class="flex items-start"><span class="bg-black rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></span>Réalisation de réseaux d’adduction d’eau</li>
+                                <li class="flex items-start"><span class="bg-black rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></span>Études hydrogéologiques et supervision technique</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Autre Domaine / Espace vide pour l'exemple -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow animated-element staggered-item" data-animation-type="slideInRightFade">
+                        <!-- Remplacez cette URL par l'URL d'une image si vous avez un 3ème domaine -->
+                        <img src="autre_domaine.jpg" alt="[attachment_9](attachment)" class="w-full h-48 object-cover" loading="lazy">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Autre Domaine (Optionnel)</h3>
+                            <p class="text-gray-700">
+                                Cette section peut être utilisée pour un troisième domaine d'activité ou pour des informations complémentaires.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Commitments Section -->
+        <section id="commitments" class="py-20 bg-gray-50 text-gray-700">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 animated-element" data-animation-type="slideUpFade">
+                    <h2 class="text-3xl font-bold text-gray-800">Nos Engagements</h2>
+                    <p class="text-gray-500 mt-2">Les piliers de notre réussite.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Engagement 1: Qualité & Sécurité -->
+                    <div class="bg-gray-50 p-8 text-center shadow hover:shadow-xl transition-shadow border border-black text-black animated-element staggered-item" data-animation-type="slideInLeftFade">
+                        <h4 class="font-bold text-xl mb-2 text-gray-800">Qualité & Sécurité</h4>
+                        <p class="text-gray-700">Respect strict des normes techniques et sécuritaires.</p>
+                    </div>
+                    <!-- Engagement 2: Délais -->
+                    <div class="bg-gray-50 p-8 text-center shadow hover:shadow-xl transition-shadow border border-black text-black animated-element staggered-item" data-animation-type="slideInLeftFade">
+                        <h4 class="font-bold text-xl mb-2 text-gray-800">Délais</h4>
+                        <p class="text-gray-700">Livraison dans les délais contractuels.</p>
+                    </div>
+                    <!-- Engagement 3: Durabilité -->
+                    <div class="bg-gray-50 p-8 text-center shadow hover:shadow-xl transition-shadow border border-black text-black animated-element staggered-item" data-animation-type="slideInLeftFade">
+                        <h4 class="font-bold text-xl mb-2 text-gray-800">Durabilité</h4>
+                        <p class="text-gray-700">Solutions adaptées au contexte local et respectueuses de l’environnement.</p>
+                    </div>
+                    <!-- Engagement 4: Satisfaction client -->
+                    <div class="bg-gray-50 p-8 text-center shadow hover:shadow-xl transition-shadow border border-black text-black animated-element staggered-item" data-animation-type="slideInLeftFade">
+                        <h4 class="font-bold text-xl mb-2 text-gray-800">Satisfaction client</h4>
+                        <p class="text-gray-700">Écoute, transparence et accompagnement à chaque étape du projet.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nouvelle Section: Management -->
+        <section id="management" class="py-20 bg-gray-100 text-gray-700">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 animated-element" data-animation-type="slideUpFade">
+                    <h2 class="text-3xl font-bold text-gray-800">Management</h2>
+                    <p class="text-gray-500 mt-2">Notre équipe dirigeante.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                    <!-- Membre 1: Jean MABI MULUMBA -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow animated-element staggered-item" data-animation-type="zoomInFade">
+                        <!-- Remplacez cette URL par l'URL de la photo de Jean MABI MULUMBA -->
+                        <img src="PDG11.jpg" alt="[attachment_10](attachment)" class="w-full h-auto object-cover" loading="lazy">
+                        <div class="bg-black text-white p-4 text-center">
+                            <h3 class="font-bold text-xl">Michel BALIMBASA NGONDE</h3>
+                            <p class="text-sm">DIRECTEUR GÉNÉRAL</p>
+                        </div>
+                    </div>
+                    <!-- Membre 2: Anne-Marie M. MAKELELA -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow animated-element staggered-item" data-animation-type="zoomInFade">
+                        <!-- Remplacez cette URL par l'URL de la photo de Anne-Marie M. MAKELELA -->
+                        <img src="Sec.jpg" alt="[attachment_11](attachment)" class="w-full h-auto object-cover" loading="lazy">
+                        <div class="bg-black text-white p-4 text-center">
+                            <h3 class="font-bold text-xl">Irénée KITAMBO NGAMVULU</h3>
+                            <p class="text-sm">DIRECTRICE TECHNIQUE</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nouvelle Section: Actualités -->
+        <section id="actualites" class="py-20 bg-white text-gray-700">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 animated-element" data-animation-type="slideUpFade">
+                    <h2 class="text-3xl font-bold text-gray-800">Actualités</h2>
+                    <p class="text-gray-500 mt-2">Restez informé de nos dernières activités.</p>
+                </div>
+                <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow animated-element" data-animation-type="fadeInScale">
+                    <!-- Remplacez cette URL par l'URL de l'image de l'actualité réelle -->
+                    <img src="Dg explication.jpg" alt="[attachment_12](attachment)" class="w-full h-auto object-cover" loading="lazy">
+                    <div class="p-6">
+                        <p class="text-gray-500 text-sm mb-2">23 Nov 2025 / Actualités</p>
+                        <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-4">Construction de la centrale hydroélectrique de Mbombo à Kananga: 79% des études déjà réalisées, selon le PDG de Scer-L Construct</h3>
+                        <p class="text-gray-700">
+                            Monsieur Michel BALIMBASA faisant son exposé devant les membres du gouvernement provincial | Photo: Optimum Entreprise, Le desinger...
+                        </p>
+                        <a href="#" class="text-gray-800 hover:underline mt-4 block">Lire la suite</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nouvelle Section: Appel d'offres -->
+        <section id="appel-offres" class="py-20 bg-gray-100 text-gray-700">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 animated-element" data-animation-type="slideUpFade">
+                    <h2 class="text-3xl font-bold text-gray-800">Appel d'offres</h2>
+                    <p class="text-gray-500 mt-2">Consultez nos appels d'offres en cours.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Offre 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg flex items-center hover:shadow-xl transition-shadow animated-element staggered-item" data-animation-type="slideUpFade">
+                        <i class="fas fa-file-pdf text-red-600 text-4xl mr-4 flex-shrink-0"></i>
+                        <div>
+                            <p class="font-bold text-gray-800 mb-2">Recrutement des consultants (Individus) devant mener une mission de contrôle et de surveillance des travaux de construction des centres de santé communautaires à travers le territoire national</p>
+                            <p class="text-gray-500 text-sm">1 fichier-s | 986.31 KB</p>
+                        </div>
+                        <!-- Remplacez "#" par l'URL de votre fichier PDF réel -->
+                        <a href="#" class="ml-auto bg-black text-white py-2 px-4 border border-black flex-shrink-0">Télécharger</a>
+                    </div>
+                    <!-- Offre 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg flex items-center hover:shadow-xl transition-shadow animated-element staggered-item" data-animation-type="slideUpFade">
+                        <i class="fas fa-file-pdf text-red-600 text-4xl mr-4 flex-shrink-0"></i>
+                        <div>
+                            <p class="font-bold text-gray-800 mb-2">Fourniture et Installation des équipements informatiques - Optimum SA</p>
+                            <p class="text-gray-500 text-sm">1 fichier-s | 770.49 KB</p>
+                        </div>
+                        <!-- Remplacez "#" par l'URL de votre fichier PDF réel -->
+                        <a href="#" class="ml-auto bg-black text-white py-2 px-4 border border-black flex-shrink-0">Télécharger</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nouvelle Section: Galerie Photo Interactive -->
+        <section id="gallery" class="py-20 bg-white text-gray-700">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 animated-element" data-animation-type="slideUpFade">
+                    <h2 class="text-3xl font-bold text-gray-800">Notre Galerie Photo</h2>
+                    <p class="text-gray-500 mt-2">Découvrez nos projets en images.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <!-- Exemples d'images de la galerie -->
+                    <!-- Remplacez cette URL par l'URL de votre image réelle 1 -->
+                    <img src="autre domaine.jpg" alt="[attachment_13](attachment)" class="gallery-img w-full h-48 object-cover rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform animated-element staggered-item" data-animation-type="popInFade" loading="lazy">
+                    <!-- Remplacez cette URL par l'URL de votre image réelle 2 -->
+                    <img src="école.jpg" alt="[attachment_14](attachment)" class="gallery-img w-full h-48 object-cover rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform animated-element staggered-item" data-animation-type="popInFade" loading="lazy">
+                    <!-- Remplacez cette URL par l'URL de votre image réelle 3 -->
+                    <img src="batiment.jpg" alt="[attachment_15](attachment)" class="gallery-img w-full h-48 object-cover rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform animated-element staggered-item" data-animation-type="popInFade" loading="lazy">
+                    <!-- Remplacez cette URL par l'URL de votre image réelle 4 -->
+                    <img src="ingénieur.jpg" alt="[attachment_16](attachment)" class="gallery-img w-full h-48 object-cover rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform animated-element staggered-item" data-animation-type="popInFade" loading="lazy">
+                    <!-- Remplacez cette URL par l'URL de votre image réelle 5 -->
+                    <img src="bureau.jpg" alt="[attachment_17](attachment)" class="gallery-img w-full h-48 object-cover rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform animated-element staggered-item" data-animation-type="popInFade" loading="lazy">
+                    <!-- Remplacez cette URL par l'URL de votre image réelle 6 -->
+                    <img src="forage.jpeg" alt="[attachment_18](attachment)" class="gallery-img w-full h-48 object-cover rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform animated-element staggered-item" data-animation-type="popInFade" loading="lazy">
+                    <!-- Remplacez cette URL par l'URL de votre image réelle 6 -->
+                    <img src="logo.jpg" alt="[attachment_18](attachment)" class="gallery-img w-full h-48 object-cover rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform animated-element staggered-item" data-animation-type="popInFade" loading="lazy">
+                    <!-- Remplacez cette URL par l'URL de votre image réelle 6 -->
+                    <img src="Central .jpeg" alt="[attachment_18](attachment)" class="gallery-img w-full h-48 object-cover rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform animated-element staggered-item" data-animation-type="popInFade" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Nouvelle Section: Galerie Vidéo Interactive -->
+        <section id="video-gallery" class="py-20 bg-gray-100 text-gray-700">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 animated-element" data-animation-type="slideUpFade">
+                    <h2 class="text-3xl font-bold text-gray-800">Notre Galerie Vidéo</h2>
+                    <p class="text-gray-500 mt-2">Découvrez nos projets en vidéo.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Exemples de vidéos de la galerie -->
+                    <div class="video-thumbnail bg-white rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform overflow-hidden animated-element staggered-item" data-animation-type="slideDownFade">
+                        <!-- Remplacez cette URL par l'URL de la miniature de votre vidéo réelle 1 -->
+                        <img src="https://placehold.co/400x225/A2C4C9/000000?text=Video+Projet+1" alt="[attachment_19](attachment)" class="w-full h-auto object-cover" loading="lazy">
+                        <div class="p-4 text-center">
+                            <p class="font-semibold text-gray-800">Présentation du Projet A</p>
+                        </div>
+                        <!-- Remplacez cette data-src par l'URL de votre vidéo réelle 1 (ex: https://www.youtube.com/embed/votre_id_video) -->
+                        <video class="hidden" data-src="https://www.w3schools.com/tags/movie.mp4"></video>
+                    </div>
+                    <div class="video-thumbnail bg-white rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform overflow-hidden animated-element staggered-item" data-animation-type="slideDownFade">
+                        <!-- Remplacez cette URL par l'URL de la miniature de votre vidéo réelle 2 -->
+                        <img src="https://placehold.co/400x225/C2B280/000000?text=Video+Forage+2" alt="[attachment_20](attachment)" class="w-full h-auto object-cover" loading="lazy">
+                        <div class="p-4 text-center">
+                            <p class="font-semibold text-gray-800">Démonstration de Forage</p>
+                        </div>
+                        <!-- Remplacez cette data-src par l'URL de votre vidéo réelle 2 -->
+                        <video class="hidden" data-src="https://www.w3schools.com/tags/movie.mp4"></video>
+                    </div>
+                    <div class="video-thumbnail bg-white rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform overflow-hidden animated-element staggered-item" data-animation-type="slideDownFade">
+                        <!-- Remplacez cette URL par l'URL de la miniature de votre vidéo réelle 3 -->
+                        <img src="https://placehold.co/400x225/F4A460/000000?text=Video+Infrastructure+3" alt="[attachment_21](attachment)" class="w-full h-auto object-cover" loading="lazy">
+                        <div class="p-4 text-center">
+                            <p class="font-semibold text-gray-800">Construction d'une route</p>
+                        </div>
+                        <!-- Remplacez cette data-src par l'URL de votre vidéo réelle 3 -->
+                        <video class="hidden" data-src="../images/vidéo"></video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Le Modal de la galerie (utilisé pour images et vidéos) -->
+        <div id="galleryModal" class="modal">
+            <span class="modal-close">×</span>
+            <img class="modal-content" id="modalImage" style="display: none;">
+            <video class="modal-content modal-video-content" id="modalVideo" controls style="display: none;"></video>
+            <a class="modal-nav-button modal-prev" id="prevMedia">❮</a>
+            <a class="modal-nav-button modal-next" id="nextMedia">❯</a>
+        </div>
+
+        <!-- Resources Section -->
+        <section id="resources" class="py-20 bg-gray-50 text-gray-700">
+            <div class="container mx-auto px-6 animated-element" data-animation-type="fadeInScale">
+                <div class="text-center mb-12">
+                     <h2 class="text-3xl font-bold text-gray-800">Nos Moyens</h2>
+                    <p class="text-gray-500 mt-2">La force de notre expertise sur le terrain.</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <ul class="space-y-4 text-lg">
+                        <li class="flex items-center"><svg class="w-6 h-6 mr-3 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Équipements modernes de forage et génie civil</li>
+                        <li class="flex items-center"><svg class="w-6 h-6 mr-3 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Personnel qualifié : ingénieurs, techniciens, foreurs et maçons</li>
+                        <li class="flex items-center"><svg class="w-6 h-6 mr-3 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Partenariats techniques avec des bureaux d’études et des fournisseurs certifié</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Locations Section -->
+        <section class="py-20 bg-gray-200 text-gray-700">
+            <div class="container mx-auto px-6 animated-element" data-animation-type="slideInRightFade">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Nous sommes proches de vous</h2>
+                    <p class="text-gray-600 mb-8 max-w-2xl mx-auto">Avec une présence stratégique dans plusieurs grandes villes, nous sommes en mesure d'intervenir rapidement sur l'ensemble du territoire.</p>
+                    <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+                        <!-- Boutons de localisation stylisés -->
+                        <span class="bg-black text-white font-semibold py-2 px-4 border border-black shadow">Kisangani</span>
+                        <span class="bg-black text-white font-semibold py-2 px-4 border border-black shadow">Butembo</span>
+                        <span class="bg-black text-white font-semibold py-2 px-4 border border-black shadow">Goma</span>
+                        <span class="bg-black text-white font-semibold py-2 px-4 border border-black shadow">Bukavu</span>
+                        <span class="bg-black text-white font-semibold py-2 px-4 border border-black shadow">Isiro</span>
+                        <span class="bg-black text-white font-semibold py-2 px-4 border border-black shadow">Bumba</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+                 <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-white text-gray-700">
+            <div class="container mx-auto px-6 animated-element" data-animation-type="slideInLeftFade">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800">Contactez-nous</h2>
+                    <p class="text-gray-500 mt-2">Discutons de votre projet.</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-gray-50 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="grid md:grid-cols-2 gap-8 text-center">
+                        <div class="space-y-4">
+                            <h4 class="font-bold text-xl text-gray-800">Adresse</h4>
+                             <p>Boulevard Mobutu N°6, Réf. résidence Équateur</p>
+                             <p>Kisangani, RDC</p>
+                        </div>
+                         <div class="space-y-4">
+                            <h4 class="font-bold text-xl text-gray-800">Téléphone & Email</h4>
+                            <p>+243825913789</p>
+                            <p>+243858585593</p>
+                            <a href="mailto:scerl0820@gmail.com" class="text-gray-800 hover:underline">scerl0820@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <!-- Mission BCECO -->
+            <div class="mb-8 animated-element" data-animation-type="slideUpFade">
+                <p class="text-lg mb-4 max-w-2xl mx-auto">
+                    Scer-L constructions a pour mission principale de gérer les projets et programmes sous financement propre ou des bailleurs de fonds, bi et multilatéraux.
+                </p>
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="#" class="text-white hover:text-gray-400"><i class="fab fa-facebook-f text-2xl"></i></a>
+                    <a href="#" class="text-white hover:text-gray-400"><i class="fab fa-twitter text-2xl"></i></a>
+                    <a href="#" class="text-white hover:text-gray-400"><i class="fab fa-youtube text-2xl"></i></a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8 text-left">
+                <!-- Liens Utiles -->
+                <div class="animated-element" data-animation-type="slideUpFade">
+                    <h4 class="font-bold text-xl mb-4">LIENS UTILES</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">Présidence</a></li>
+                        <li><a href="#" class="hover:underline">Primature</a></li>
+                        <li><a href="#" class="hover:underline">Ministère du Plan</a></li>
+                        <li><a href="#" class="hover:underline">Ministère des Finances</a></li>
+                        <li><a href="#" class="hover:underline">Ministère de la Santé</a></li>
+                    </ul>
+                </div>
+                <!-- Nos Coordonnées -->
+                <div class="animated-element" data-animation-type="slideUpFade">
+                    <h4 class="font-bold text-xl mb-4">NOS COORDONNÉES</h4>
+                    <p class="mb-2">372, Av. Col Mendjiba, Coplx. Utexafrica</p>
+                    <p class="mb-2">Kisangani, RDC</p>
+                    <p class="mb-2">Téléphone: +243825913789</p>
+                    <p class="mb-2">Téléphone: +243858585593</p>
+                    <p><a href="mailto:scerl0820@gmail.com" class="hover:underline">scerl0820@gmail.com</a></p>
+                </div>
+                <!-- Espace pour d'autres informations si nécessaire -->
+            </div>
+
+            <p class="text-gray-400 border-t border-gray-700 pt-8">© 2025 Scer-l Construct SARL. Desing By <a href="">David Wawina</a>. Tous droits réservés.</p>
+        </div>
+    </footer>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            if (mobileMenu.classList.contains('active') && mobileMenu.children.length === 0) {
+                const links = `
+                    <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-700 transition">À propos</a>
+                    <a href="#services" class="block py-2 px-4 text-sm hover:bg-gray-700 transition">Nos Activités</a>
+                    <a href="#commitments" class="block py-2 px-4 text-sm hover:bg-gray-700 transition">Engagements</a>
+                    <a href="#management" class="block py-2 px-4 text-sm hover:bg-gray-700 transition">Management</a>
+                    <a href="#actualites" class="block py-2 px-4 text-sm hover:bg-gray-700 transition">Actualités</a>
+                    <a href="#appel-offres" class="block py-2 px-4 text-sm hover:bg-gray-700 transition">Appel d'offres</a>
+                    <a href="#gallery" class="block py-2 px-4 text-sm hover:bg-gray-700 transition">Galerie Photos</a>
+                    <a href="#video-gallery" class="block py-2 px-4 text-sm hover:bg-gray-700 transition">Galerie Vidéos</a>
+                    <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-700 transition">Contact</a>
+                `;
+                mobileMenu.innerHTML = links;
+            } else if (!mobileMenu.classList.contains('active')) {
+                mobileMenu.innerHTML = '';
+            }
+        });
+
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            mobileMenu.innerHTML = '';
+        });
+
+        /* --- Logique du carrousel Héro --- */
+        let slideIndex = 0;
+        let slideTimer;
+        const slides = document.querySelectorAll('.hero-carousel-slide');
+        const dots = document.querySelectorAll('.hero-carousel-dot');
+
+        // Fonction pour afficher une diapositive spécifique
+        function showSlides() {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            if (slideIndex >= slides.length) { slideIndex = 0; }
+            if (slideIndex < 0) { slideIndex = slides.length - 1; }
+
+            slides[slideIndex].classList.add('active');
+            dots[slideIndex].classList.add('active');
+
+            // Réinitialiser le timer pour le défilement automatique
+            clearTimeout(slideTimer);
+            slideTimer = setTimeout(() => {
+                slideIndex++;
+                showSlides();
+            }, 5000); // Change image every 5 seconds
+        }
+
+        // Contrôle manuel: Suivant/Précédent
+        function plusSlides(n) {
+            slideIndex += n;
+            showSlides();
+        }
+
+        // Contrôle manuel: Cliquer sur un point
+        function currentSlide(n) {
+            slideIndex = n - 1;
+            showSlides();
+        }
+
+        // Initialiser le carrousel au chargement de la page
+        document.addEventListener('DOMContentLoaded', showSlides);
+
+        /* --- Logique de la galerie photo et vidéo interactive --- */
+        const galleryModal = document.getElementById('galleryModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalVideo = document.getElementById('modalVideo');
+        const prevMediaButton = document.getElementById('prevMedia');
+        const nextMediaButton = document.getElementById('nextMedia');
+        const closeButton = document.querySelector('.modal-close');
+
+        const allMediaItems = []; // Contient toutes les images et vidéos
+        let currentMediaIndex = 0;
+
+        // Collecter toutes les images de la galerie
+        document.querySelectorAll('.gallery-img').forEach(img => {
+            allMediaItems.push({ type: 'image', src: img.src, alt: img.alt });
+        });
+
+        // Collecter toutes les vidéos de la galerie
+        document.querySelectorAll('.video-thumbnail').forEach(div => {
+            const videoElement = div.querySelector('video');
+            const imgSrc = div.querySelector('img').src; // Miniature de la vidéo
+            allMediaItems.push({ type: 'video', src: videoElement.dataset.src, alt: div.querySelector('p').innerText, thumbnail: imgSrc });
+        });
+
+        // Fonction pour afficher l'image ou la vidéo dans le modal
+        function showMediaInModal(index) {
+            if (index >= 0 && index < allMediaItems.length) {
+                currentMediaIndex = index;
+                const mediaItem = allMediaItems[currentMediaIndex];
+
+                // Cacher tous les contenus du modal et arrêter la vidéo si elle joue
+                modalImage.style.display = 'none';
+                modalVideo.style.display = 'none';
+                modalVideo.pause(); // Important: arrêter la lecture si on change de média
+
+                if (mediaItem.type === 'image') {
+                    modalImage.src = mediaItem.src;
+                    modalImage.alt = mediaItem.alt;
+                    modalImage.style.display = 'block';
+                } else if (mediaItem.type === 'video') {
+                    modalVideo.src = mediaItem.src;
+                    modalVideo.alt = mediaItem.alt; // Utiliser l'alt pour la description si nécessaire
+                    modalVideo.style.display = 'block';
+                    modalVideo.load(); // Charger la vidéo
+                    modalVideo.play(); // Jouer automatiquement
+                }
+
+                // Cacher les boutons de navigation si on est au début ou à la fin
+                prevMediaButton.style.display = (currentMediaIndex === 0) ? 'none' : 'block';
+                nextMediaButton.style.display = (currentMediaIndex === allMediaItems.length - 1) ? 'none' : 'block';
+            }
+        }
+
+        // Ouvrir le modal quand une image est cliquée
+        document.querySelectorAll('.gallery-img').forEach((img, index) => {
+            img.addEventListener('click', () => {
+                galleryModal.style.display = 'flex';
+                // Trouver l'index réel de cette image dans allMediaItems
+                const actualIndex = allMediaItems.findIndex(item => item.src === img.src && item.type === 'image');
+                if (actualIndex !== -1) {
+                    showMediaInModal(actualIndex);
+                }
+            });
+        });
+
+        // Ouvrir le modal quand une miniature vidéo est cliquée
+        document.querySelectorAll('.video-thumbnail').forEach((div, index) => {
+            div.addEventListener('click', () => {
+                galleryModal.style.display = 'flex';
+                const videoElement = div.querySelector('video');
+                const actualIndex = allMediaItems.findIndex(item => item.src === videoElement.dataset.src && item.type === 'video');
+                 if (actualIndex !== -1) {
+                    showMediaInModal(actualIndex);
+                }
+            });
+        });
+
+        // Fermer le modal
+        closeButton.addEventListener('click', () => {
+            galleryModal.style.display = 'none';
+            modalVideo.pause(); // S'assurer que la vidéo s'arrête en fermant le modal
+            modalVideo.currentTime = 0; // Remettre la vidéo au début
+        });
+
+        // Navigation précédente
+        prevMediaButton.addEventListener('click', () => {
+            showMediaInModal(currentMediaIndex - 1);
+        });
+
+        // Navigation suivante
+        nextMediaButton.addEventListener('click', () => {
+            showMediaInModal(currentMediaIndex + 1);
+        });
+
+        // Fermer le modal en cliquant en dehors du contenu
+        galleryModal.addEventListener('click', (e) => {
+            if (e.target === galleryModal) {
+                galleryModal.style.display = 'none';
+                modalVideo.pause(); // S'assurer que la vidéo s'arrête en fermant le modal
+                modalVideo.currentTime = 0; // Remettre la vidéo au début
+            }
+        });
+
+        // Dark Mode Toggle Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement; // Get the html tag
+
+        // Check for saved theme preference in localStorage
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            htmlElement.setAttribute('data-theme', savedTheme);
+        } else {
+            // Default to light theme if no preference is saved
+            htmlElement.setAttribute('data-theme', 'light');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (htmlElement.getAttribute('data-theme') === 'dark') {
+                htmlElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            } else {
+                htmlElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        /* --- Intersection Observer for unique section animations --- */
+        const animatedElements = document.querySelectorAll('.animated-element');
+        const observerOptions = {
+            threshold: 0.1, // Trigger when 10% of the element is visible
+            rootMargin: "0px 0px -50px 0px" // Offset the root bottom margin
+        };
+
+        const sectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    const animationType = element.dataset.animationType;
+                    if (animationType) {
+                        element.classList.add(`animate-${animationType}`);
+                        // No need for explicit 'visible' class if animation handles opacity forwards
+                    }
+                    observer.unobserve(element); // Stop observing once animated
+                }
+            });
+        }, observerOptions);
+
+        // Observe each animated element
+        animatedElements.forEach(element => {
+            sectionObserver.observe(element);
+        });
+    </script>
+</body>
+</html>
+
